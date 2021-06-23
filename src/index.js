@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
+import { Provider } from "react-redux";
 import Bool from "./components/query/bool";
-import store from "./reduxTools/store";
+import QueryField from "./components/tester/queryField";
+import reduxStore from "./reduxTools/store";
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={reduxStore}>
     <Bool />
-  </React.StrictMode>,
+    <QueryField />
+  </Provider>,
   document.getElementById("root")
 );
 

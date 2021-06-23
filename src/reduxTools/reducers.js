@@ -1,19 +1,18 @@
-import { combineReducers } from "redux";
-import { add, del, modify } from "./actions";
+import { add, del, mod } from "./actions";
 
-const jsonObject = (state = {}, action) => {
+const reducer = (state = {}, action) => {
   switch (action.type) {
-    case ADD:
+    case "ADD":
       return {
         ...state,
         items: action.payload,
       };
-    case DELETE:
+    case "DELETE":
       return {
         ...state,
         item: action.payload,
       };
-    case MODIFY:
+    case "MODIFY":
       return {
         ...state,
         item: action.payload,
@@ -23,6 +22,4 @@ const jsonObject = (state = {}, action) => {
   }
 };
 
-export default combineReducers({
-  jsonReducer: jsonObject,
-});
+export default reducer;

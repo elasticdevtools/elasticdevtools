@@ -1,4 +1,4 @@
-export const add = (h, obj) => {
+export function add(h, obj) {
   return {
     type: "ADD",
     payload: {
@@ -6,9 +6,9 @@ export const add = (h, obj) => {
       object: obj,
     },
   };
-};
+}
 
-export const del = (h, obj) => {
+export function del(h, obj) {
   return {
     type: "DELETE",
     payload: {
@@ -16,9 +16,9 @@ export const del = (h, obj) => {
       object: obj,
     },
   };
-};
+}
 
-export const modify = (h, obj) => {
+export function mod(h, obj) {
   return {
     type: "MODIFY",
     payload: {
@@ -26,4 +26,4 @@ export const modify = (h, obj) => {
       object: obj,
     },
   };
-};
+}
