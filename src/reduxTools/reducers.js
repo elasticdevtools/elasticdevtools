@@ -1,8 +1,9 @@
-import { add, del, mod } from "./actions";
+import { combineReducers } from "redux";
 
 const reducer = (state = {}, action) => {
   switch (action.type) {
     case "ADD":
+      console.log(action.payload);
       return {
         ...state,
         items: action.payload,
@@ -22,4 +23,4 @@ const reducer = (state = {}, action) => {
   }
 };
 
-export default reducer;
+export default combineReducers({ queryReducer: reducer });

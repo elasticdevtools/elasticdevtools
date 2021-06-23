@@ -1,4 +1,5 @@
 export function add(h, obj) {
+  console.log(h);
   return {
     type: "ADD",
     payload: {

@@ -10,8 +10,8 @@ class Bool extends Component {
         <div className="card m-2">
           <div className="card-header">Bool</div>
           <div>
-            <Match />
-            <Match />
+            {/* <Match /> */}
+            <Match heirarchy={[1, 2, 3]} />
           </div>
         </div>
       </React.Fragment>
