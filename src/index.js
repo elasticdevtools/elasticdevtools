@@ -5,13 +5,13 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import { Provider } from "react-redux";
-import Bool from "./components/query/bool";
 import QueryField from "./components/tester/queryField";
 import reduxStore from "./reduxTools/store";
+import Base from "./components/main/base";
 
 ReactDOM.render(
   <Provider store={reduxStore}>
-    <Bool />
+    <Base key={0} />
     <QueryField />
   </Provider>,
   document.getElementById("root")

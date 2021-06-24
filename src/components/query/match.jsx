@@ -54,19 +54,19 @@ class Match extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="m-3 card">
-          <div class="card-header d-flex justify-content-between  align-items-center">
+        <div className="m-2 card">
+          <div className="card-header d-flex justify-content-between  align-items-center">
             Match
             <button
               // onClick={}
               type="button"
-              class="btn btn-sm btn-danger"
+              className="btn btn-sm btn-danger"
             >
               Delete
             </button>
           </div>
           <div className="card-body">
-            <div class="form-floating mb-3">
+            <div className="form-floating mb-3">
               <input
                 type="text"
                 className="form-control"
@@ -76,7 +76,7 @@ class Match extends Component {
               />
               <label for="name">Field Label</label>
             </div>
-            <div class="form-floating">
+            <div className="form-floating">
               <input
                 type="text"
                 className="form-control"
