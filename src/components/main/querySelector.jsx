@@ -4,8 +4,8 @@ import GetElementByName from "../../utils/getelementbyname";
 class QuerySelector extends Component {
   state = {
     // options: ["Query", "Sort", "Aggs", "Source", "Size"],
-    options: ["Bool", "Match"],
-    fieldValue: "Select Element...",
+    options: ["Bool", "Match", "Match Phrase"],
+    fieldValue: "Select Query Type...",
     heirarchy: this.props.heirarchy,
   };
   render() {
@@ -14,7 +14,7 @@ class QuerySelector extends Component {
         <div className="card-header d-flex justify-content-between  align-items-center">
           Query
           <button
-            // onClick={}
+            onClick={(a) => this.props.onDelete(this.props.element)}
             type="button"
             className="btn btn-sm btn-danger"
           >
@@ -27,7 +27,7 @@ class QuerySelector extends Component {
             aria-label="Query Type Selector"
             onChange={(a) => this.setState({ fieldValue: a.target.value })}
           >
-            <option>Select Element...</option>
+            <option>Select Query Type...</option>
             {this.state.options.map((a) => (
               <option value={a}>{a}</option>
             ))}

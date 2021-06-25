@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.css";
 // import reducer from "../../reduxTools/reducers";
 import { add, del, mod } from "../../reduxTools/actions";
 
-class Match extends Component {
+class MatchPhrase extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +15,7 @@ class Match extends Component {
   }
   componentWillUnmount() {
     this.props.DELETE(this.props.heirarchy, {
-      match: {
+      match_phrase: {
         [this.state.value]: this.state.value,
       },
     });
@@ -25,7 +25,7 @@ class Match extends Component {
       name: event.target.value,
     });
     this.props.ADD(this.props.heirarchy, {
-      match: {
+      match_phrase: {
         [event.target.value]: this.state.value,
       },
     });
@@ -35,14 +35,14 @@ class Match extends Component {
       value: event.target.value,
     });
     this.props.ADD(this.props.heirarchy, {
-      match: {
+      match_phrase: {
         [this.state.name]: event.target.value,
       },
     });
     console.log(
       JSON.stringify(
         {
-          match: {
+          match_phrase: {
             [this.state.name]: event.target.value,
           },
         },
@@ -58,7 +58,7 @@ class Match extends Component {
           {this.props.onDelete !== undefined ||
           this.props.heirarchy[this.props.heirarchy - 1] === "Query" ? (
             <div className="card-header d-flex justify-content-between  align-items-center">
-              Match
+              Match Phrase
               <button
                 onClick={(a) => this.props.onDelete(this.props.element)}
                 type="button"
@@ -68,7 +68,7 @@ class Match extends Component {
               </button>
             </div>
           ) : (
-            <div className="card-header">Match</div>
+            <div className="card-header">Match Phrase</div>
           )}
           <div className="card-body">
             <div className="form-floating mb-3">
@@ -112,4 +112,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStatetoProps, mapDispatchToProps)(Match);
+export default connect(mapStatetoProps, mapDispatchToProps)(MatchPhrase);

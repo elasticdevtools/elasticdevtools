@@ -11,6 +11,17 @@ class Base extends Component {
     heirarchy: ["Base"],
   };
 
+  handleDelete = (elem) => {
+    console.log("delete", elem.target);
+    this.setState({
+      currentComponents: this.state.currentComponents.filter(
+        // (a) => JSON.stringify(a) !== JSON.stringify(elem)
+        (a) => a.key !== elem.key
+      ),
+      options: [...this.state.options, elem.value],
+    });
+  };
+
   updateCurrentComponents = () => {
     // console.log(this.state.currentComponents);
     let temp = this.state.currentComponents;
@@ -63,6 +74,7 @@ class Base extends Component {
             <GetElementByName
               key={a.key}
               heirarchy={this.state.heirarchy}
+              onDelete={this.handleDelete}
               element={a}
             />
           ))}

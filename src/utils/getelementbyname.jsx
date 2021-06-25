@@ -1,6 +1,7 @@
 import React from "react";
 import Bool from "../components/query/bool";
 import Match from "../components/query/match";
+import MatchPhrase from "../components/query/matchPhrase";
 import Sort from "../components/main/sort";
 import QuerySelector from "../components/main/querySelector";
 
@@ -14,16 +15,51 @@ function GetElementByName(props) {
     value = props.element.value;
   }
   let heir = [...props.heirarchy, props.element.value];
+
   if (value === "Select Element...") {
     result = <React.Fragment></React.Fragment>;
+  } else if (value === "Select Query Type...") {
+    result = <React.Fragment></React.Fragment>;
   } else if (value === "Bool") {
-    result = <Bool heirarchy={heir} />;
+    result = (
+      <Bool
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    );
   } else if (value === "Match") {
-    result = <Match heirarchy={heir} />;
+    result = (
+      <Match
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    );
+  } else if (value === "Match Phrase") {
+    result = (
+      <MatchPhrase
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    );
   } else if (value === "Sort") {
-    result = <Sort heirarchy={heir} />;
+    result = (
+      <Sort
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    );
   } else if (value === "Query") {
-    result = <QuerySelector heirarchy={heir} />;
+    result = (
+      <QuerySelector
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    );
   }
   console.log(result);
   return result;

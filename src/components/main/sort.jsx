@@ -7,7 +7,7 @@ class Sort extends Component {
         <div className="card-header d-flex justify-content-between  align-items-center">
           Sort
           <button
-            // onClick={}
+            onClick={(a) => this.props.onDelete(this.props.element)}
             type="button"
             className="btn btn-sm btn-danger"
           >
