@@ -4,6 +4,7 @@ import Match from '../components/query/match'
 import MatchPhrase from '../components/query/matchPhrase'
 import Sort from '../components/main/sort'
 import Source from '../components/main/source'
+import Size from '../components/main/size'
 import QuerySelector from '../components/main/querySelector'
 
 function GetElementByName(props) {
@@ -64,6 +65,14 @@ function GetElementByName(props) {
   } else if (value === 'Query') {
     result = (
       <QuerySelector
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    )
+  } else if (value === 'Size') {
+    return (
+      <Size
         onDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}

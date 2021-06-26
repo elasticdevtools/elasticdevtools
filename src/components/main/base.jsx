@@ -5,7 +5,7 @@ import GetElementByName from '../../utils/getelementbyname'
 class Base extends Component {
   state = {
     // options: ["Query", "Sort", "Aggs", "Source", "Size"],
-    options: ['Source', 'Query', 'Sort'],
+    options: ['Source', 'Query', 'Sort', 'Size'],
     currentComponents: [],
     fieldValue: 'Select Element...',
     heirarchy: ['Base'],

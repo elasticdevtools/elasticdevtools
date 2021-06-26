@@ -79,7 +79,7 @@ class Match extends Component {
                 placeholder="Field Label"
                 onChange={this.onChangeName}
               />
-              <label for="name">Field Label</label>
+              <label htmlFor="name">Field Label</label>
             </div>
             <div className="form-floating">
               <input
@@ -89,7 +89,7 @@ class Match extends Component {
                 placeholder="Field Value"
                 onChange={this.onChangeValue}
               />
-              <label for="value">Field Value</label>
+              <label htmlFor="value">Field Value</label>
             </div>
           </div>
         </div>
