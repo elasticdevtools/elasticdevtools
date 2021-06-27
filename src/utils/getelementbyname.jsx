@@ -13,6 +13,7 @@ import Prefix from '../components/query/prefix'
 import Range from '../components/query/range'
 import Regex from '../components/query/regex'
 import WildCard from '../components/query/wildCard'
+import Term from '../components/query/term'
 function GetElementByName(props) {
   let result
   let value
@@ -103,7 +104,7 @@ function GetElementByName(props) {
   } else if (value === 'Fuzzy') {
     result = (
       <Fuzzy
-        nDelete={props.onDelete}
+        onDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
       />
@@ -111,7 +112,7 @@ function GetElementByName(props) {
   } else if (value === 'Prefix') {
     result = (
       <Prefix
-        nDelete={props.onDelete}
+        onDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
       />
@@ -119,7 +120,7 @@ function GetElementByName(props) {
   } else if (value === 'Range') {
     result = (
       <Range
-        nDelete={props.onDelete}
+        onDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
       />
@@ -127,7 +128,7 @@ function GetElementByName(props) {
   } else if (value === 'Regex') {
     result = (
       <Regex
-        nDelete={props.onDelete}
+        onDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
       />
@@ -135,7 +136,15 @@ function GetElementByName(props) {
   } else if (value === 'WildCard') {
     result = (
       <WildCard
-        nDelete={props.onDelete}
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    )
+  } else if (value === 'Term') {
+    result = (
+      <Term
+        onDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
       />
