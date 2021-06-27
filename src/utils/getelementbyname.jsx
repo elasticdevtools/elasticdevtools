@@ -12,6 +12,7 @@ import Fuzzy from '../components/query/fuzzy'
 import Prefix from '../components/query/prefix'
 import Range from '../components/query/range'
 import Regex from '../components/query/regex'
+import WildCard from '../components/query/wildCard'
 function GetElementByName(props) {
   let result
   let value
@@ -126,6 +127,14 @@ function GetElementByName(props) {
   } else if (value === 'Regex') {
     result = (
       <Regex
+        nDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    )
+  } else if (value === 'WildCard') {
+    result = (
+      <WildCard
         nDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}

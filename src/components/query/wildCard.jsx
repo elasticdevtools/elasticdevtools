@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { add, del, mod } from '../../reduxTools/actions'
 import { connect } from 'react-redux'
 
-class Regex extends Component {
+class WildCard extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -13,14 +13,14 @@ class Regex extends Component {
   }
 
   componentWillUnmount() {
-    let newRegex = {
-      regex: {
+    let newWildCard = {
+      wildcard: {
         [this.state.field]: {
           value: this.state.value,
         },
       },
     }
-    this.props.DELETE(this.props.heirarchy, newRegex)
+    this.props.DELETE(this.props.heirarchy, newWildCard)
   }
 
   onFieldChange = (e) => {
@@ -28,7 +28,7 @@ class Regex extends Component {
       field: e.target.value,
     })
     this.props.ADD(this.props.heirarchy, {
-      regex: {
+      wildcard: {
         [e.target.value]: {
           value: '',
         },
@@ -41,7 +41,7 @@ class Regex extends Component {
       value: e.target.value,
     })
     this.props.ADD(this.props.heirarchy, {
-      regex: {
+      wildcard: {
         [this.state.field]: {
           value: e.target.value,
         },
@@ -55,7 +55,7 @@ class Regex extends Component {
         {this.props.onDelete !== undefined ||
         this.props.heirarchy[this.props.heirarchy - 1] === 'Query' ? (
           <div className='card-header d-flex justify-content-between  align-items-center'>
-            Regex
+            Wild Card
             <button
               onClick={(a) => this.props.onDelete(this.props.element)}
               type='button'
@@ -65,7 +65,7 @@ class Regex extends Component {
             </button>
           </div>
         ) : (
-          <div className='card-header'>Regex</div>
+          <div className='card-header'>Wild Card</div>
         )}
         <div className='card-body'>
           <div className='form-floating mb-3'>
@@ -112,4 +112,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStatetoProps, mapDispatchToProps)(Regex)
+export default connect(mapStatetoProps, mapDispatchToProps)(WildCard)

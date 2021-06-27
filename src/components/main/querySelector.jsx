@@ -13,7 +13,8 @@ class QuerySelector extends Component {
       'Fuzzy',
       'Prefix',
       'Range',
-      'Regex'
+      'Regex',
+      'WildCard',
     ],
     fieldValue: 'Select Query Type...',
     heirarchy: this.props.heirarchy,
