@@ -10,7 +10,7 @@ import MultiMatch from '../components/query/multiMatch'
 import Exists from '../components/query/exists'
 import Fuzzy from '../components/query/fuzzy'
 import Prefix from '../components/query/prefix'
-
+import Range from '../components/query/range'
 function GetElementByName(props) {
   let result
   let value
@@ -109,6 +109,14 @@ function GetElementByName(props) {
   } else if (value === 'Prefix') {
     result = (
       <Prefix
+        nDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    )
+  } else if (value === 'Range') {
+    result = (
+      <Range
         nDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
