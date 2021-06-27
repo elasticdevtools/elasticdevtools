@@ -1,30 +1,30 @@
-import React, { Component } from "react";
-import GetElementByName from "../../utils/getelementbyname";
+import React, { Component } from 'react'
+import GetElementByName from '../../utils/getelementbyname'
 
 class QuerySelector extends Component {
   state = {
     // options: ["Query", "Sort", "Aggs", "Source", "Size"],
-    options: ["Bool", "Match", "Match Phrase"],
-    fieldValue: "Select Query Type...",
+    options: ['Bool', 'Match', 'Match Phrase', 'Multi Match'],
+    fieldValue: 'Select Query Type...',
     heirarchy: this.props.heirarchy,
-  };
+  }
   render() {
     return (
-      <div className="card">
-        <div className="card-header d-flex justify-content-between  align-items-center">
+      <div className='card'>
+        <div className='card-header d-flex justify-content-between  align-items-center'>
           Query
           <button
             onClick={(a) => this.props.onDelete(this.props.element)}
-            type="button"
-            className="btn btn-sm btn-danger"
+            type='button'
+            className='btn btn-sm btn-danger'
           >
             Delete
           </button>
         </div>
-        <div className="card-body">
+        <div className='card-body'>
           <select
-            class="form-select"
-            aria-label="Query Type Selector"
+            class='form-select'
+            aria-label='Query Type Selector'
             onChange={(a) => this.setState({ fieldValue: a.target.value })}
           >
             <option>Select Query Type...</option>
@@ -39,8 +39,8 @@ class QuerySelector extends Component {
           />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default QuerySelector;
+export default QuerySelector

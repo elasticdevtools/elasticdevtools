@@ -6,6 +6,7 @@ import Sort from '../components/main/sort'
 import Source from '../components/main/source'
 import Size from '../components/main/size'
 import QuerySelector from '../components/main/querySelector'
+import MultiMatch from '../components/query/multiMatch'
 
 function GetElementByName(props) {
   let result
@@ -41,6 +42,14 @@ function GetElementByName(props) {
   } else if (value === 'Match Phrase') {
     result = (
       <MatchPhrase
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    )
+  } else if (value === 'Multi Match') {
+    result = (
+      <MultiMatch
         onDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
