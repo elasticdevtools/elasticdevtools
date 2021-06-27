@@ -14,6 +14,7 @@ import Range from '../components/query/range'
 import Regex from '../components/query/regex'
 import WildCard from '../components/query/wildCard'
 import Term from '../components/query/term'
+import Terms from '../components/query/terms'
 function GetElementByName(props) {
   let result
   let value
@@ -144,6 +145,14 @@ function GetElementByName(props) {
   } else if (value === 'Term') {
     result = (
       <Term
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    )
+  } else if (value === 'Terms') {
+    result = (
+      <Terms
         onDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}

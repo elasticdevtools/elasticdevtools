@@ -16,6 +16,7 @@ class QuerySelector extends Component {
       'Regex',
       'WildCard',
       'Term',
+      'Terms',
     ],
     fieldValue: 'Select Query Type...',
     heirarchy: this.props.heirarchy,
