@@ -12,7 +12,8 @@ class QuerySelector extends Component {
       'Exists',
       'Fuzzy',
       'Prefix',
-      'Range'
+      'Range',
+      'Regex'
     ],
     fieldValue: 'Select Query Type...',
     heirarchy: this.props.heirarchy,
