@@ -8,6 +8,7 @@ import Size from '../components/main/size'
 import QuerySelector from '../components/main/querySelector'
 import MultiMatch from '../components/query/multiMatch'
 import Exists from '../components/query/exists'
+import Fuzzy from '../components/query/fuzzy'
 
 function GetElementByName(props) {
   let result
@@ -92,6 +93,14 @@ function GetElementByName(props) {
     return (
       <Exists
         onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    )
+  } else if (value === 'Fuzzy') {
+    return (
+      <Fuzzy
+        nDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
       />

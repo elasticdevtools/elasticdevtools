@@ -41,7 +41,7 @@ class Exists extends Component {
         {this.props.onDelete !== undefined ||
         this.props.heirarchy[this.props.heirarchy - 1] === 'Query' ? (
           <div className='card-header d-flex justify-content-between  align-items-center'>
-            Match
+            Exists
             <button
               onClick={(a) => this.props.onDelete(this.props.element)}
               type='button'
@@ -51,7 +51,7 @@ class Exists extends Component {
             </button>
           </div>
         ) : (
-          <div className='card-header'>Match</div>
+          <div className='card-header'>Exists</div>
         )}
         <div className='card-body'>
           <div className='form-floating mb-3'>
