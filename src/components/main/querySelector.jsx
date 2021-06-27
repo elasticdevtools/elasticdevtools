@@ -4,7 +4,15 @@ import GetElementByName from '../../utils/getelementbyname'
 class QuerySelector extends Component {
   state = {
     // options: ["Query", "Sort", "Aggs", "Source", "Size"],
-    options: ['Bool', 'Match', 'Match Phrase', 'Multi Match', 'Exists', 'Fuzzy'],
+    options: [
+      'Bool',
+      'Match',
+      'Match Phrase',
+      'Multi Match',
+      'Exists',
+      'Fuzzy',
+      'Prefix',
+    ],
     fieldValue: 'Select Query Type...',
     heirarchy: this.props.heirarchy,
   }

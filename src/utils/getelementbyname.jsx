@@ -9,6 +9,7 @@ import QuerySelector from '../components/main/querySelector'
 import MultiMatch from '../components/query/multiMatch'
 import Exists from '../components/query/exists'
 import Fuzzy from '../components/query/fuzzy'
+import Prefix from '../components/query/prefix'
 
 function GetElementByName(props) {
   let result
@@ -82,7 +83,7 @@ function GetElementByName(props) {
       />
     )
   } else if (value === 'Size') {
-    return (
+    result = (
       <Size
         onDelete={props.onDelete}
         heirarchy={heir}
@@ -90,7 +91,7 @@ function GetElementByName(props) {
       />
     )
   } else if (value === 'Exists') {
-    return (
+    result = (
       <Exists
         onDelete={props.onDelete}
         heirarchy={heir}
@@ -98,8 +99,16 @@ function GetElementByName(props) {
       />
     )
   } else if (value === 'Fuzzy') {
-    return (
+    result = (
       <Fuzzy
+        nDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    )
+  } else if (value === 'Prefix') {
+    result = (
+      <Prefix
         nDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
