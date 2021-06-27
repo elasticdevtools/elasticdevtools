@@ -7,6 +7,7 @@ import Source from '../components/main/source'
 import Size from '../components/main/size'
 import QuerySelector from '../components/main/querySelector'
 import MultiMatch from '../components/query/multiMatch'
+import Exists from '../components/query/exists'
 
 function GetElementByName(props) {
   let result
@@ -82,6 +83,14 @@ function GetElementByName(props) {
   } else if (value === 'Size') {
     return (
       <Size
+        onDelete={props.onDelete}
+        heirarchy={heir}
+        element={props.element}
+      />
+    )
+  } else if (value === 'Exists') {
+    return (
+      <Exists
         onDelete={props.onDelete}
         heirarchy={heir}
         element={props.element}
